@@ -11,73 +11,65 @@
 
 //TODO:このclassをenumで書き換える
 
-namespace U16proconActionEncode
-{
-	static class Action_encode
-	{
-		static public short walkup()
-		{
-			return 100;
-		}
-		static public short walkright()
-		{
-			return 101;
-		}
-		static public short walkdown()
-		{
-			return 102;
-		}
-		static public short walkleft()
-		{
-			return 103;
-		}
-		static public short putup()
-		{
-			return 400;
-		}
-		static public short putright()
-		{
-			return 401;
-		}
-		static public short putdown()
-		{
-			return 402;
-		}
-		static public short putleft()
-		{
-			return 403;
-		}
-		static public short lookup()
-		{
-			return 700;
-		}
-		static public short lookright()
-		{
-			return 701;
-		}
-		static public short lookdown()
-		{
-			return 702;
-		}
-		static public short lookleft()
-		{
-			return 703;
-		}
-		static public short searchup()
-		{
-			return 800;
-		}
-		static public short searchright()
-		{
-			return 801;
-		}
-		static public short searchdown()
-		{
-			return 802;
-		}
-		static public short searchleft()
-		{
-			return 803;
-		}
-	}
-}   //namespace U16proconActionEncode
+namespace U16procon {
+  namespace Encode {
+
+    enum Field {
+      Floor = 0,
+      Enemy,
+      Block,
+      Item,
+    }
+
+    static class Action_encode {
+      static public short Walkup() {
+        return 100;
+      }
+      static public short Walkright() {
+        return 101;
+      }
+      static public short Walkdown() {
+        return 102;
+      }
+      static public short Walkleft() {
+        return 103;
+      }
+      static public short Putup() {
+        return 400;
+      }
+      static public short Putright() {
+        return 401;
+      }
+      static public short Putdown() {
+        return 402;
+      }
+      static public short Putleft() {
+        return 403;
+      }
+      static public short Lookup() {
+        return 700;
+      }
+      static public short Lookright() {
+        return 701;
+      }
+      static public short Lookdown() {
+        return 702;
+      }
+      static public short Lookleft() {
+        return 703;
+      }
+      static public short Searchup() {
+        return 800;
+      }
+      static public short Searchright() {
+        return 801;
+      }
+      static public short Searchdown() {
+        return 802;
+      }
+      static public short Searchleft() {
+        return 803;
+      }
+    }
+  }   //namespace encode
+}   //namespace U16procon

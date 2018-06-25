@@ -1,4 +1,7 @@
-namespace U16proconItem {
-  class Item {
+namespace U16procon {
+  namespace Item {
+    class Item {
+
+    }
   }
 }
