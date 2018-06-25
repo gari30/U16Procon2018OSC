@@ -5,10 +5,24 @@ namespace U16proconWalk {
     private int[] kData = new int[9];
     static private int kMode = 1;
 
+    /*
+      移動前情報を設定
+      data:GetReadyで取得した周囲情報
+      mode:移動したい方向を指定
+            1:右上
+            3:右下
+            5:左上
+            7:左下
+     */
     public void WalkSet(int[] data, int mode) {
       kData = data;
       kMode = mode;
     }
+
+    /*
+      移動前情報を設定
+      data:GetReadyで取得した周囲情報
+     */
     public void WalkSet(int[] data) {
       kData = data;
     }
