@@ -10,6 +10,15 @@ namespace U16procon_osc2018 {
   }
 }   //namespace U16procon_osc2018
 
+//TODO: No.1 ループ回避の実装
+/*      既存のloop回避コードを組み込んで見る */
+
+//TODO: No.2 マップ記憶の実装
+/*      Dictionary型で実装してみる            */
+
+//TODO: No.3 A*の実装
+/*      ネット情報参考にしてじっそうしてみる  */
+
 namespace U16proconCore {
   class Core {
 
