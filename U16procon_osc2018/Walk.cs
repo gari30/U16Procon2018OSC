@@ -37,23 +37,23 @@ namespace U16procon {
 
         switch(kMode) {
           case 1://右上
-            if(kData[5] != 2) {
+            if(kData[5] != (int)Field.Block) {
               kMode = 2;
               code = Action_encode.Walkright();
             }
-            else if(kData[2] != 2 && kData[1] != 2) {
+            else if(kData[2] != (int)Field.Block && kData[1] != (int)Field.Block) {
               kMode = 1;
               code = Action_encode.Walkup();
             }
-            else if(kData[3] != 2) {
+            else if(kData[3] != (int)Field.Block) {
               kMode = 5;
               code = Action_encode.Walkleft();
             }
-            else if(kData[1] != 2) {
+            else if(kData[1] != (int)Field.Block) {
               kMode = 6;
               code = Action_encode.Walkup();
             }
-            else// if (kData[7] != 2)
+            else// if (kData[7] != (int)Field.Block)
             {
               kMode = 8;
               code = Action_encode.Walkdown();
@@ -61,23 +61,23 @@ namespace U16procon {
             break;
 
           case 2:
-            if(kData[1] != 2) {
+            if(kData[1] != (int)Field.Block) {
               kMode = 1;
               code = Action_encode.Walkup();
             }
-            else if(kData[2] != 2 && kData[5] != 2) {
+            else if(kData[2] != (int)Field.Block && kData[5] != (int)Field.Block) {
               kMode = 2;
               code = Action_encode.Walkright();
             }
-            else if(kData[7] != 2) {
+            else if(kData[7] != (int)Field.Block) {
               kMode = 4;
               code = Action_encode.Walkdown();
             }
-            else if(kData[5] != 2) {
+            else if(kData[5] != (int)Field.Block) {
               kMode = 2;
               code = Action_encode.Walkright();
             }
-            else// if (kData[3] != 2)
+            else// if (kData[3] != (int)Field.Block)
             {
               kMode = 7;
               code = Action_encode.Walkleft();
@@ -85,23 +85,23 @@ namespace U16procon {
             break;
 
           case 3://右下
-            if(kData[5] != 2) {
+            if(kData[5] != (int)Field.Block) {
               kMode = 4;
               code = Action_encode.Walkright();
             }
-            else if(kData[8] != 2 && kData[7] != 2) {
+            else if(kData[8] != (int)Field.Block && kData[7] != (int)Field.Block) {
               kMode = 3;
               code = Action_encode.Walkdown();
             }
-            else if(kData[3] != 2) {
+            else if(kData[3] != (int)Field.Block) {
               kMode = 7;
               code = Action_encode.Walkleft();
             }
-            else if(kData[7] != 2) {
+            else if(kData[7] != (int)Field.Block) {
               kMode = 8;
               code = Action_encode.Walkleft();
             }
-            else //if (kData[1] != 2)
+            else //if (kData[1] != (int)Field.Block)
             {
               kMode = 6;
               code = Action_encode.Walkup();
@@ -109,23 +109,23 @@ namespace U16procon {
             break;
 
           case 4:
-            if(kData[7] != 2) {
+            if(kData[7] != (int)Field.Block) {
               kMode = 3;
               code = Action_encode.Walkdown();
             }
-            else if(kData[8] != 2 && kData[5] != 2) {
+            else if(kData[8] != (int)Field.Block && kData[5] != (int)Field.Block) {
               kMode = 4;
               code = Action_encode.Walkright();
             }
-            else if(kData[1] != 2) {
+            else if(kData[1] != (int)Field.Block) {
               kMode = 2;
               code = Action_encode.Walkup();
             }
-            else if(kData[5] != 2) {
+            else if(kData[5] != (int)Field.Block) {
               kMode = 1;
               code = Action_encode.Walkright();
             }
-            else //if (kData[3] != 2)
+            else //if (kData[3] != (int)Field.Block)
             {
               kMode = 5;
               code = Action_encode.Walkleft();
@@ -133,23 +133,23 @@ namespace U16procon {
             break;
 
           case 5://左上
-            if(kData[3] != 2) {
+            if(kData[3] != (int)Field.Block) {
               kMode = 6;
               code = Action_encode.Walkleft();
             }
-            else if(kData[1] != 2 && kData[0] != 2) {
+            else if(kData[1] != (int)Field.Block && kData[0] != (int)Field.Block) {
               kMode = 5;
               code = Action_encode.Walkup();
             }
-            else if(kData[5] != 2) {
+            else if(kData[5] != (int)Field.Block) {
               kMode = 1;
               code = Action_encode.Walkright();
             }
-            else if(kData[1] != 2) {
+            else if(kData[1] != (int)Field.Block) {
               kMode = 2;
               code = Action_encode.Walkup();
             }
-            else //if (kData[7] != 2)
+            else //if (kData[7] != (int)Field.Block)
             {
               kMode = 4;
               code = Action_encode.Walkdown();
@@ -157,23 +157,23 @@ namespace U16procon {
             break;
 
           case 6:
-            if(kData[1] != 2) {
+            if(kData[1] != (int)Field.Block) {
               kMode = 5;
               code = Action_encode.Walkup();
             }
-            else if(kData[3] != 2 && kData[0] != 2) {
+            else if(kData[3] != (int)Field.Block && kData[0] != (int)Field.Block) {
               kMode = 6;
               code = Action_encode.Walkleft();
             }
-            else if(kData[7] != 2) {
+            else if(kData[7] != (int)Field.Block) {
               kMode = 8;
               code = Action_encode.Walkdown();
             }
-            else if(kData[3] != 2) {
+            else if(kData[3] != (int)Field.Block) {
               kMode = 7;
               code = Action_encode.Walkleft();
             }
-            else// if (kData[5] != 2)
+            else// if (kData[5] != (int)Field.Block)
             {
               kMode = 3;
               code = Action_encode.Walkright();
@@ -181,23 +181,23 @@ namespace U16procon {
             break;
 
           case 7://左下
-            if(kData[3] != 2) {
+            if(kData[3] != (int)Field.Block) {
               kMode = 8;
               code = Action_encode.Walkleft();
             }
-            else if(kData[7] != 2 && kData[6] != 2) {
+            else if(kData[7] != (int)Field.Block && kData[6] != (int)Field.Block) {
               kMode = 7;
               code = Action_encode.Walkdown();
             }
-            else if(kData[5] != 2) {
+            else if(kData[5] != (int)Field.Block) {
               kMode = 3;
               code = Action_encode.Walkright();
             }
-            else if(kData[7] != 2) {
+            else if(kData[7] != (int)Field.Block) {
               kMode = 4;
               code = Action_encode.Walkdown();
             }
-            else// if (kData[1] != 2)
+            else// if (kData[1] != (int)Field.Block)
             {
               kMode = 2;
               code = Action_encode.Walkup();
@@ -205,23 +205,23 @@ namespace U16procon {
             break;
 
           case 8:
-            if(kData[7] != 2) {
+            if(kData[7] != (int)Field.Block) {
               kMode = 7;
               code = Action_encode.Walkdown();
             }
-            else if(kData[3] != 2 && kData[6] != 2) {
+            else if(kData[3] != (int)Field.Block && kData[6] != (int)Field.Block) {
               kMode = 8;
               code = Action_encode.Walkleft();
             }
-            else if(kData[1] != 2) {
+            else if(kData[1] != (int)Field.Block) {
               kMode = 6;
               code = Action_encode.Walkup();
             }
-            else if(kData[3] != 2) {
+            else if(kData[3] != (int)Field.Block) {
               kMode = 5;
               code = Action_encode.Walkleft();
             }
-            else// if (kkData[5] != 2)
+            else// if (kkData[5] != (int)Field.Block)
             {
               kMode = 1;
               code = Action_encode.Walkright();

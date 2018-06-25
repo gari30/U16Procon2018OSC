@@ -14,7 +14,7 @@
 namespace U16procon {
   namespace Encode {
 
-    enum Field {
+    enum Field : byte {
       Floor = 0,
       Enemy,
       Block,
