@@ -10,6 +10,10 @@ namespace U16procon {
   }
 }   //namespace U16procon
 
+//TODO: アイテムを拾う関数の実装
+//      Walk関数と既存のItemクラスの実装を参考に。
+//      class内部で配列を保持しないように
+
 //TODO: No.1 ループ回避の実装
 /*      既存のloop回避コードを組み込んで見る */
 
