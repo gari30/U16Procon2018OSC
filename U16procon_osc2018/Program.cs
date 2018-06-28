@@ -27,6 +27,7 @@ namespace U16procon {
       CHaser.Client client = CHaser.Client.Create();
       Walk.Walk walk = new Walk.Walk();
       Item.Item item = new Item.Item();
+      Enemy.Enemy enemy = new Enemy.Enemy();
 
       //変数
       static short turn_count = 0;
@@ -44,6 +45,11 @@ namespace U16procon {
         int item_ret = item.GetItem(value);
         if (item_ret != -1) {
           answer = item_ret;
+        }
+
+        int enemy_ret = enemy.GetEnemy(value);
+        if (enemy_ret != -1) {
+          answer = enemy_ret;
         }
 
         switch(answer) {
