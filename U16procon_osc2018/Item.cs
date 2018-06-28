@@ -17,5 +17,5 @@ namespace U16procon {
         else return -1;
       }
     }
-  }
-}
+  } // namespace Item
+} // namespace U16procon
