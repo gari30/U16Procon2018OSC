@@ -1,6 +1,6 @@
 namespace U16procon {
   namespace Item {
-    class Item {
+    public class Item {
 
       /*
         周囲のアイテムがあれば取る

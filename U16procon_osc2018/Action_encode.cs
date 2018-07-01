@@ -5,7 +5,7 @@
 /*************使い方*********
  * Action_encode.使いたい動作();
  * と使ってください
- * 
+ *
  * 返り値にその動作の行動コードを返します、引数は要りません
  */
 
@@ -21,7 +21,7 @@ namespace U16procon {
       Item,
     }
 
-    static class Action_encode {
+    public class Action_encode {
       static public short Walkup() {
         return 100;
       }

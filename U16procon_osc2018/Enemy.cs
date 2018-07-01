@@ -1,6 +1,6 @@
 namespace U16procon {
   namespace Enemy {
-    class Enemy {
+    public class Enemy {
 
       /*
         上下左右に敵がいた場合にBlockを置く
