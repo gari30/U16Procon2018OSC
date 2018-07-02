@@ -2,7 +2,7 @@ namespace U16procon {
   namespace Walk {
     using Encode;
 
-    class Walk {
+    public class Walk {
       static private int kcode = 0;
       static private int kMode = 1;
 
@@ -13,9 +13,11 @@ namespace U16procon {
               3:右下
               5:左上
               7:左下
+        data:GetReadyで取得した周囲情報
        */
-      public void WalkSet(int mode) {
+      public void WalkSet(int[] data, int mode) {
         kMode = mode;
+        SlantingWalk(ref data);
       }
 
       /*
