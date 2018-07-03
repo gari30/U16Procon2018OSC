@@ -1,10 +1,12 @@
 namespace U16procon {
   namespace Walk {
+    using System.Collections.Generic;
     using Encode;
 
     public class Walk {
       static private int kcode = 0;
       static private int kMode = 1;
+      private static short kcode_hold = 0;
 
       /*
         移動方向を指定する
@@ -25,7 +27,42 @@ namespace U16procon {
         data:GetReadyで取得した周囲情報
        */
       public void WalkSet(int[] data) {
-         SlantingWalk(ref data);
+        SlantingWalk(ref data);
+      }
+
+      /*
+        Loop検知中の移動
+        data:GetReadyで取得した周囲情報
+        return:true(回避行動中)
+               false(回避行動中止、通常動作に戻る)
+       */
+      public bool LoopWalk(int[] data) {
+        List<short> walk_course = new List<short> { Action_encode.Walkup(),
+                                                    Action_encode.Walkdown(),
+                                                    Action_encode.Walkright(),
+                                                    Action_encode.Walkleft() };
+        if (data[1] == (int)Field.Block) walk_course.Remove(Action_encode.Walkup());
+        if (data[7] == (int)Field.Block) walk_course.Remove(Action_encode.Walkdown());
+        if (data[5] == (int)Field.Block) walk_course.Remove(Action_encode.Walkright());
+        if (data[3] == (int)Field.Block) walk_course.Remove(Action_encode.Walkleft());
+
+        if (kcode_hold == 0) {
+          System.Random random = new System.Random();
+          int rand_data = random.Next(walk_course.Count);
+
+          kcode_hold = walk_course[rand_data];
+          kcode = walk_course[rand_data];
+        }
+        else {
+          if (walk_course.Contains(kcode_hold) == true) {
+            kcode = kcode_hold;
+          }
+          else {
+            SlantingWalk(ref data);
+            return false;
+          }
+        }
+        return true;
       }
 
       /*

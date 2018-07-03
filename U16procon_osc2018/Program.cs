@@ -28,22 +28,40 @@ namespace U16procon {
       Walk.Walk walk = new Walk.Walk();
       Item.Item item = new Item.Item();
       Enemy.Enemy enemy = new Enemy.Enemy();
+      Loop.Loop loop = new Loop.Loop();
 
       //変数
       static short turn_count = 0;
       int[] value = new int[9];     //GetReady info
       int[] action_after = new int[9];    //action after info
       int answer = 0;   //temp action code
+      byte loop_count = 0;  //loop avoidance action count
 
       public void CoreMain() {
         turn_count++;
         value = client.GetReady();
 
-        walk.WalkSet(value);
+        if (loop_count == 0) {
+          walk.WalkSet(value);
+
+          if(loop.CodeSet(answer) == true) {
+            loop_count = 8; //8ターンループ回避行動を設定
+          }
+        }
+        else {
+          loop_count--;
+          bool walk_ret = walk.LoopWalk(value);
+          if(walk_ret == false) {
+            loop_count = 0;
+            loop.LoopReset();
+          }
+        }
         answer = walk.WalkGet();
 
         int item_ret = item.GetItem(value);
         if (item_ret != -1) {
+          loop_count = 0;
+          loop.LoopReset();
           answer = item_ret;
         }
 
