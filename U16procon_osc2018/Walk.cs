@@ -46,21 +46,23 @@ namespace U16procon {
         if (data[5] == (int)Field.Block) walk_course.Remove(Action_encode.Walkright());
         if (data[3] == (int)Field.Block) walk_course.Remove(Action_encode.Walkleft());
 
-        if (kcode_hold == 0) {
-          System.Random random = new System.Random();
-          int rand_data = random.Next(walk_course.Count);
+        switch (kcode_hold) {
+          case 0:
+            System.Random random = new System.Random();
+            int rand_data = random.Next(walk_course.Count);
 
-          kcode_hold = walk_course[rand_data];
-          kcode = walk_course[rand_data];
-        }
-        else {
-          if (walk_course.Contains(kcode_hold) == true) {
-            kcode = kcode_hold;
-          }
-          else {
-            SlantingWalk(ref data);
-            return false;
-          }
+            kcode_hold = walk_course[rand_data];
+            kcode = walk_course[rand_data];
+            break;
+
+          default:
+            if (walk_course.Contains(kcode_hold) == true) {
+              kcode = kcode_hold;
+            }
+            else {
+              goto case 0;
+            }
+            break;
         }
         return true;
       }

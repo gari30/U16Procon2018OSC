@@ -70,6 +70,8 @@ namespace U16procon {
           answer = enemy_ret;
         }
 
+        System.Console.WriteLine("code=" + answer);
+
         switch(answer) {
           case 100:
             //上に移動
