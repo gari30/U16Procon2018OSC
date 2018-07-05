@@ -25,7 +25,7 @@ namespace U16procon {
       private int GetGoingItem(ref int[] data) {
         byte item_count = 0;
         foreach(int i in data) {
-          if (data[i] == (int)Encode.Field.Item) {
+          if (i == (int)Encode.Field.Item) {
             item_count++;
           }
         }

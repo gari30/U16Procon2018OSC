@@ -41,6 +41,11 @@ namespace U16procon {
         turn_count++;
         value = client.GetReady();
 
+        foreach (int i in value) {
+          System.Console.Write(i + ",");
+        }
+        System.Console.WriteLine();
+
         if (loop_count == 0) {
           walk.WalkSet(value);
 

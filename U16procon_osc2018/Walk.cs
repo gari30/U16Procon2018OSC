@@ -72,6 +72,7 @@ namespace U16procon {
         return:行動コード
        */
       public int WalkGet() {
+        System.Console.WriteLine("mode=" + kMode);
         return kcode;
       }
 
@@ -141,7 +142,7 @@ namespace U16procon {
             }
             else if(data[7] != (int)Field.Block) {
               kMode = 8;
-              kcode = Action_encode.Walkleft();
+              kcode = Action_encode.Walkdown();
             }
             else //if (data[1] != (int)Field.Block)
             {
