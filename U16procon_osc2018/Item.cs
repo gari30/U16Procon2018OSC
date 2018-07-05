@@ -15,10 +15,30 @@ namespace U16procon {
       }
 
       private int GetItemFirst(ref int[] data) {
-        if (data[1] == (int)Encode.Field.Item) return Encode.Action_encode.Walkup();
-        else if (data[5] == (int)Encode.Field.Item) return Encode.Action_encode.Walkright();
-        else if (data[3] == (int)Encode.Field.Item) return Encode.Action_encode.Walkleft();
-        else if (data[7] == (int)Encode.Field.Item) return Encode.Action_encode.Walkdown();
+        if (data[1] == (int)Encode.Field.Item) {
+          if (data[0] == (int)Encode.Field.Block && data[2] == (int)Encode.Field.Block) {
+            return Encode.Action_encode.Putup();
+          }
+          return Encode.Action_encode.Walkup();
+        }
+        else if (data[5] == (int)Encode.Field.Item) {
+          if (data[2] == (int)Encode.Field.Block && data[8] == (int)Encode.Field.Block) {
+            return Encode.Action_encode.Putright();
+          }
+          return Encode.Action_encode.Walkright();
+        }
+        else if (data[3] == (int)Encode.Field.Item) {
+          if (data[0] == (int)Encode.Field.Block && data[6] == (int)Encode.Field.Block) {
+            return Encode.Action_encode.Putleft();
+          }
+          return Encode.Action_encode.Walkleft();
+        }
+        else if (data[7] == (int)Encode.Field.Item) {
+          if (data[6] == (int)Encode.Field.Block && data[8] == (int)Encode.Field.Block) {
+            return Encode.Action_encode.Putdown();
+          }
+          return Encode.Action_encode.Walkdown();
+        }
         else return GetGoingItem(ref data);
       }
 
