@@ -10,9 +10,6 @@ namespace U16procon {
   }
 }   //namespace U16procon
 
-//TODO: No.1 ループ回避の実装
-/*      既存のloop回避コードを組み込んで見る */
-
 //TODO: No.2 マップ記憶の実装
 /*      Dictionary型で実装してみる            */
 
